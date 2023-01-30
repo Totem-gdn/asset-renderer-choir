@@ -11,12 +11,11 @@ class NFTController {
     }
     if (type) {
       const nft = await nftHelper.get(type, id);
-      // nft.body_type = 'Fat';
-      // nft.body_strength = 'Muscular';
-      // nft.hair_styles = 'Afro'
-      nft['glow_color'] = nft.primary_color.replace(')', ', 0.5)').replace('rgb', 'rgba');
 
       console.log('nft', nft);
+
+      nft['glow_color'] = nft.primary_color.replace(')', ', 0.5)').replace('rgb', 'rgba');
+
       res.setHeader('Content-Type', 'image/svg+xml');
       res.render(`layouts/${type}.hbs`, {
         layout: `${type}.hbs`,
