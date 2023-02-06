@@ -14,3 +14,4 @@
 
 > In this file controllers/api/nft.js we getting params for image, its width, height, type, and id image and depend of type, we geting HBS file in folder 'layouts' and binding render
 > 
+
