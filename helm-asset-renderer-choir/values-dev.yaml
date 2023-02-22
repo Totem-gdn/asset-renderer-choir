@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: 667950714614.dkr.ecr.us-east-1.amazonaws.com/asset-renderer-choir
+  repository: 667950714614.dkr.ecr.us-east-2.amazonaws.com/asset-renderer-choir
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "dev"
@@ -29,7 +29,7 @@ ingress:
     alb.ingress.kubernetes.io/ssl-redirect: '443'
     alb.ingress.kubernetes.io/scheme: internet-facing
   hosts:
-    - host: test-dev-asset-renderer-choir.mobilesoftware.systems
+    - host: dev-asset-renderer-choir.totem-explorer.com
       paths:
         - path: /
           pathType: Prefix
@@ -61,12 +61,6 @@ tolerations:
     effect: "NoSchedule"
 
 env:
-   host: ""
-   port: ""
-   API_URL: ""
-   AVATAR_CONTRACT: ""
-   GEM_CONTRACT: ""
-   ITEM_CONTRACT: ""
-   CACHE_MAX_AGE: ""
+   ENV: ""
    
 
